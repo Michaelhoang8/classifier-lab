@@ -1,0 +1,42 @@
+{
+  "app": "classifier-lab",
+  "mode": "train",
+  "source": "Michaelhoang8/portfolio-lab",
+  "backend_definitions": {
+    "capabilities": [
+      "enrich",
+      "load_model",
+      "predict",
+      "validated_model"
+    ],
+    "ml_apps": [
+      "auc",
+      "metrics",
+      "number",
+      "probability_metrics",
+      "sigmoid",
+      "threshold_metrics",
+      "train"
+    ],
+    "validation": [
+      "ConflictError",
+      "NotFoundError",
+      "ValidationError",
+      "integer"
+    ],
+    "data_apps": [
+      "parse",
+      "safe_csv"
+    ],
+    "json_input": [
+      "decode",
+      "read_exact"
+    ],
+    "db": [
+      "SCHEMA",
+      "connect",
+      "initialize",
+      "rows"
+    ]
+  }
+}

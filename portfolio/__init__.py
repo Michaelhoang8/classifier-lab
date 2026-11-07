@@ -1,0 +1,1 @@
+"""Classifier Lab: standalone application."""
