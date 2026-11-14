@@ -1,5 +1,104 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Classifier Lab</title><link rel="stylesheet" href="/data.css"><link rel="stylesheet" href="/ml.css"><link rel="stylesheet" href="/identities.css"><link rel="stylesheet" href="/observatory.css"><script src="/observatory.js" defer></script><script src="/csv_columns.js" defer></script><script src="/identities.js" defer></script><script src="/capabilities.js" defer></script><script src="/text_file.js" defer></script><script src="/ml.js" defer></script></head><body data-app="train">
-<header><a href="/">Classifier Lab</a><span>LOCAL WORKSPACE</span><a href="https://github.com/Michaelhoang8/classifier-lab">Source code ↗</a></header><main><div class="intro"><div><p class="eyebrow">THE MACHINE LEARNING WORKSPACE</p><h1>Build a baseline.<br>Measure what matters<span>.</span></h1><p>Train a model, explain a match, and inspect every tradeoff.</p></div><div class="local">● LOCAL COMPUTATION<small>No model downloads or API keys.<br>Transparent algorithms. Reproducible results.</small></div></div>
-
-<div class="workspace"><section class="source"><div class="section-head"><h2 id="input-title">Training data</h2><button id="sample" class="text-button">Load sample</button></div><p id="input-help" class="hint"></p><label class="upload"><span id="file-label">Choose a CSV file</span><input id="file" type="file" accept=".csv,text/csv"></label><label for="source">Or paste input</label><textarea id="source" spellcheck="false"></textarea><fieldset id="train-options"><legend>Training configuration</legend><label>Target column<input id="target" value="label"></label><label>Split seed<input id="seed" type="number" min="0" max="1000000" value="42"></label><p class="hint">75/25 stratified split, 200 gradient steps, standardized features, L2 regularization. Target: 0 or 1.</p></fieldset><fieldset id="search-options" hidden><legend>Search query</legend><label>Query<input id="query" value="database transaction rollback" maxlength="500"></label><p class="hint">Lexical TF-IDF or BM25 retrieval. Matches words, not neural semantic embeddings. No generated answers.</p></fieldset><fieldset id="evaluate-options" hidden><legend>Decision threshold</legend><label>Predict positive when score ≥<input id="threshold" type="number" min="0" max="1" step="0.05" value="0.5"></label><p class="hint">Scores must represent probabilities for class 1. Use validation data to select a threshold, then assess once on a separate test set.</p></fieldset><button id="run" class="primary">Train classifier →</button><div id="notice" role="status" aria-live="polite"></div><p class="hint">Inputs are processed in memory. Download results before leaving. Samples are synthetic, not real business outcomes.</p></section><section class="results" aria-label="ML results"><div class="section-head"><h2 id="result-title">Model report</h2><button id="download" disabled>Download JSON</button></div><div id="result"></div></section></div><footer>Classifier Lab<span>Independent application · local processing</span></footer></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Classifier Lab</title>
+    <link rel="stylesheet" href="/data.css" />
+    <link rel="stylesheet" href="/ml.css" />
+    <link rel="stylesheet" href="/identities.css" />
+    <link rel="stylesheet" href="/observatory.css" />
+    <script src="/observatory.js" defer></script>
+    <script src="/csv_columns.js" defer></script>
+    <script src="/identities.js" defer></script>
+    <script src="/capabilities.js" defer></script>
+    <script src="/text_file.js" defer></script>
+    <script src="/ml.js" defer></script>
+  </head>
+  <body data-app="train">
+    <header>
+      <a href="/">Classifier Lab</a><span>LOCAL WORKSPACE</span
+      ><a href="https://github.com/Michaelhoang8/classifier-lab"
+        >Source code ↗</a
+      >
+    </header>
+    <main>
+      <div class="workspace">
+        <section class="source">
+          <div class="section-head">
+            <h2 id="input-title">Training data</h2>
+            <button id="sample" class="text-button">Load sample</button>
+          </div>
+          <p id="input-help" class="hint"></p>
+          <label class="upload"
+            ><span id="file-label">Choose a CSV file</span
+            ><input id="file" type="file" accept=".csv,text/csv" /></label
+          ><label for="source">Or paste input</label
+          ><textarea id="source" spellcheck="false"></textarea>
+          <fieldset id="train-options">
+            <legend>Training configuration</legend>
+            <label>Target column<input id="target" value="label" /></label
+            ><label
+              >Split seed<input
+                id="seed"
+                type="number"
+                min="0"
+                max="1000000"
+                value="42"
+            /></label>
+            <p class="hint">
+              75/25 stratified split, 200 gradient steps, standardized features,
+              L2 regularization. Target: 0 or 1.
+            </p>
+          </fieldset>
+          <fieldset id="search-options" hidden>
+            <legend>Search query</legend>
+            <label
+              >Query<input
+                id="query"
+                value="database transaction rollback"
+                maxlength="500"
+            /></label>
+            <p class="hint">
+              Lexical TF-IDF or BM25 retrieval. Matches words, not neural
+              semantic embeddings. No generated answers.
+            </p>
+          </fieldset>
+          <fieldset id="evaluate-options" hidden>
+            <legend>Decision threshold</legend>
+            <label
+              >Predict positive when score ≥<input
+                id="threshold"
+                type="number"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.5"
+            /></label>
+            <p class="hint">
+              Scores must represent probabilities for class 1. Use validation
+              data to select a threshold, then assess once on a separate test
+              set.
+            </p>
+          </fieldset>
+          <button id="run" class="primary">Train classifier →</button>
+          <div id="notice" role="status" aria-live="polite"></div>
+          <p class="hint">
+            Inputs are processed in memory. Download results before leaving.
+            Samples are synthetic, not real business outcomes.
+          </p>
+        </section>
+        <section class="results" aria-label="ML results">
+          <div class="section-head">
+            <h2 id="result-title">Model report</h2>
+            <button id="download" disabled>Download JSON</button>
+          </div>
+          <div id="result"></div>
+        </section>
+      </div>
+      <footer>
+        Classifier Lab<span>Independent application · local processing</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -83,7 +83,7 @@ window.analysisEmpty = function (mode) {
     logs: ['Turn events into investigation leads', 'Load authentication events to inspect failure bursts and suspicious sequences.'],
     headers: ['Review your response policies', 'Paste an HTTP header block to see observed controls and practical next steps.'],
     secrets: ['Review text without exposing findings', 'Scan source text for credential patterns. Reports omit raw credential values.'],
-    train: ['Train your first baseline', 'Load labeled numeric data to compare a classifier with a majority-class baseline.'],
+    train: ['No trained model', 'Load labeled numeric CSV and train to view held-out metrics.'],
     search: ['Find a passage worth reading', 'Add a document collection and a query to rank matching passages.'],
     evaluate: ['Look beyond accuracy', 'Supply labels and prediction scores to explore errors and threshold tradeoffs.'],
     manifest: ['Review before deployment', 'Load a Deployment manifest to inspect selected configuration policies.'],

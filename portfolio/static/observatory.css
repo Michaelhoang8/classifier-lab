@@ -151,3 +151,190 @@ body[data-app] .panel .section-head a{color:var(--blue);font-size:12px;text-unde
 
 body[data-app] button.report-export{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:9px 13px;font:600 12px/1.5 Arial,sans-serif}
 body[data-app] button.report-export:hover:not(:disabled){background:var(--bg);border-color:var(--blue)}
+
+body[data-app="train"] {
+  --bg: #f3f1e9;
+  --paper: #f3f1e9;
+  --ink: #292d27;
+  --muted: #696e61;
+  --blue: #4f6731;
+  --line: #d6d7cb;
+  background: var(--bg);
+}
+body[data-app="train"] main {
+  max-width: 1600px;
+  padding: 0 4%;
+}
+body[data-app="train"] header {
+  padding-left: 4%;
+  padding-right: 4%;
+  background: #f3f1e9;
+}
+body[data-app="train"] .workspace {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 32px;
+  box-shadow: none;
+  margin-top: 30px;
+  align-items: start;
+}
+body[data-app="train"] .source {
+  background: transparent;
+  border: 0;
+  padding: 0 24px 0 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+}
+body[data-app="train"] .results {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+body[data-app="train"] .upload {
+  border-style: solid;
+  background: #fff9;
+}
+body[data-app="train"] textarea {
+  height: 230px;
+  background: #fff9;
+  font-size: 11px;
+}
+body[data-app="train"] .stats {
+  margin: 24px 0 16px;
+  gap: 0;
+}
+body[data-app="train"] .stat {
+  padding: 0 20px;
+}
+body[data-app="train"] .stat:first-child {
+  padding-left: 0;
+}
+body[data-app="train"] .stat strong {
+  font:
+    400 clamp(28px, 3.8vw, 54px) / 1.4 Georgia,
+    serif;
+  color: #303b28 !important;
+}
+body[data-app="train"] .summary {
+  background: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+body[data-app="train"] .plot {
+  background: #20291f;
+  border: 0;
+  border-radius: 8px;
+  padding: 24px;
+  color: #e2ebd4;
+  box-shadow: 0 16px 40px #26331d14;
+}
+body[data-app="train"] .plot-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+body[data-app="train"] .plot-heading h3 {
+  font: 400 15px Arial;
+  margin: 0;
+}
+body[data-app="train"] .plot-heading span {
+  font:
+    26px Georgia,
+    serif;
+  color: #bedf85;
+}
+body[data-app="train"] .plot-heading small {
+  display: block;
+  font: 10px Arial;
+  color: #b3c0a5;
+  text-align: right;
+}
+body[data-app="train"] .plot svg {
+  height: auto;
+  width: 100%;
+  margin-top: 16px;
+  overflow: visible;
+}
+body[data-app="train"] .plot polyline {
+  stroke: #bedf85;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+body[data-app="train"] .plot line {
+  stroke: #ffffff13;
+}
+body[data-app="train"] .plot text {
+  fill: #aebda6;
+  font: 10px Arial;
+}
+body[data-app="train"] .matrix {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+}
+body[data-app="train"] .matrix > div {
+  border: 0;
+  background: #e9eddf;
+  border-radius: 0;
+  padding: 14px;
+  font-size: 10px;
+}
+body[data-app="train"] .matrix > div.error-cell {
+  background: #f1e6dc;
+}
+body[data-app="train"] .matrix strong {
+  font:
+    32px/1.5 Georgia,
+    serif;
+}
+body[data-app="train"] .empty {
+  border: 1px dashed #bdc5b1;
+  margin-top: 24px;
+  min-height: 440px;
+}
+body[data-app="train"] .prediction-panel {
+  background: #fff8;
+  border: 1px solid var(--line);
+}
+@media (max-width: 900px) {
+  body[data-app="train"] .workspace {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 20px;
+  }
+  body[data-app="train"] .source {
+    padding-right: 18px;
+  }
+  body[data-app="train"] .stat {
+    padding: 0 10px;
+  }
+  body[data-app="train"] .matrix {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 680px) {
+  body[data-app="train"] .workspace {
+    display: block;
+  }
+  body[data-app="train"] .source {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 24px;
+    margin-bottom: 24px;
+  }
+  body[data-app="train"] .plot {
+    padding: 16px;
+  }
+  body[data-app="train"] .stat strong {
+    font-size: 28px;
+  }
+  body[data-app="train"] .empty {
+    min-height: 230px;
+  }
+}

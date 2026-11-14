@@ -4,6 +4,8 @@ Train reproducible logistic-regression baselines, export models, and predict new
 
 ![Classifier Lab preview](docs/app.png)
 
+The training workspace pairs a compact input column with a large loss plot, held-out metrics, and an error-count strip. The plot draws in after training and respects reduced-motion preferences. Model export and batch predictions remain available under Detailed analysis & exports.
+
 ## Run
 
 Requires Python 3.11+; no third-party runtime dependencies. Clone this repository and run from its root:
